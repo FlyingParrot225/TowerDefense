@@ -47,7 +47,13 @@ class Player{
         this.coinMultiplier = 1 * (this.coinMultiplier + 1)
     }
     findAngle(x1, y1, x2, y2){
-        let angle = Math.atan2(x1 - x2, -(y1 - y2));
+        //opposite
+        let opp = y2 - y1;
+        //adjacent
+        let adj = x1 - x2;
+        //pythagorean
+        let hyp = Math.sqrt((opp*opp) + (adj*adj));
+        let angle = Math.asin(opp/hyp*Math.PI/180);
         return angle;
     }
     rotateTurret(){
