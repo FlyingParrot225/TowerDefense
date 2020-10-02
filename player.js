@@ -53,7 +53,7 @@ class Player{
         let adj = x1 - x2;
         //pythagorean
         let hyp = Math.sqrt((opp*opp) + (adj*adj));
-        let angle = Math.asin((opp/hyp)*Math.PI/180);
+        let angle = Math.asin(opp/hyp);
         return angle;
     }
     rotateTurret(){
