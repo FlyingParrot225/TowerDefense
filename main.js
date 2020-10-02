@@ -10,9 +10,9 @@ var mouse = {
 }
 
 var gameState = {
-    start : false,
+    start : true,
     shop : false,
-    battle : false,
+    battle : true,
 }
 var player = new Player;
 var shop = new Shop;
