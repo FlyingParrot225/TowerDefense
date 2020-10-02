@@ -54,7 +54,7 @@ class Player{
         let adj = x1 - x2;
         //pythagorean
         let hyp = Math.sqrt((opp*opp) + (adj*adj));
-        if((opp >= 0) && (adj >= 0)){
+        /*if((opp >= 0) && (adj >= 0)){
             angle = Math.asin(opp/hyp);
         }else if((opp < 0) && (adj >= 0)){
             angle = Math.acos(adj/hyp);
@@ -62,7 +62,8 @@ class Player{
             angle = Math.asin(opp/hyp);
         }else if((opp < 0) && (adj < 0)){
             angle = Math.atan(opp/adj);
-        }
+        }*/
+        angle = Math.atan(opp/adj);
         return angle;
     }
     rotateTurret(){
