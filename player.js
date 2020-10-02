@@ -52,6 +52,7 @@ class Player{
     }
     rotateTurret(){
         this.turretAngle = this.findAngle(mouse.x,mouse.y,this.centerX, this.centerY);
+        console.log(this.findAngle(mouse.x,mouse.y,this.centerX, this.centerY)*Math.PI/180);
     }
     shoot(){
 
