@@ -81,6 +81,6 @@ function loop(){
     }else{
 
     }
-    window.requestAnimationFrame(loop());
+    window.requestAnimationFrame(loop);
 }
 loop();
