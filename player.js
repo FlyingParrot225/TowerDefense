@@ -63,7 +63,7 @@ class Player{
         }else if((opp < 0) && (adj < 0)){
             angle = Math.atan(opp/adj);
         }*/
-        angle = Math.atan(opp/adj);
+        angle = Math.asin(opp/adj);
         return angle;
     }
     rotateTurret(){
