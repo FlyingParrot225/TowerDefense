@@ -54,20 +54,19 @@ class Player{
         let adj = x1 - x2;
         //pythagorean
         let hyp = Math.sqrt((opp*opp) + (adj*adj));
-        /*if((opp >= 0) && (adj >= 0)){
+        if((opp >= 0) && (adj >= 0)){
             angle = Math.asin(opp/hyp);
         }else if((opp < 0) && (adj >= 0)){
-            angle = Math.acos(adj/hyp);
+            angle = Math.acos(adj/hyp) + (270*Math.PI/180);
         }else if((opp >= 0) && (adj < 0)){
-            angle = Math.asin(opp/hyp);
+            angle = Math.asin(opp/hyp) + (90*Math.PI/180);
         }else if((opp < 0) && (adj < 0)){
-            angle = Math.atan(opp/adj);
-        }*/
-        angle = Math.asin(opp/adj);
+            angle = Math.atan(opp/adj) + (180*Math.PI/180);
+        }
         return angle;
     }
     rotateTurret(){
-        this.turretAngle = this.findAngle(mouse.x,mouse.y,this.centerX, this.centerY);
+        this.turretAngle = -this.findAngle(mouse.x,mouse.y,this.centerX, this.centerY);
         console.log(this.findAngle(mouse.x,mouse.y,this.centerX, this.centerY));
     }
     shoot(){
