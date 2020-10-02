@@ -63,10 +63,10 @@ class Player{
         ctx.strokeRect(this.towerX,this.towerY, this.towerWidth, this.towerHeight);
         ctx.save()
         ctx.translate(this.centerX, this.centerY);
-        ctx.rotate(this.turretAngle*Math.PI/180);
+        ctx.rotate(this.turretAngle);
         ctx.fillStyle = "gray"
-        ctx.fillRect(this.turretX,this.turretY,this.turretWidth, this.turretHeight);
-        ctx.strokeRect(this.turretX,this.turretY,this.turretWidth, this.turretHeight);
+        ctx.fillRect(this.turretX,this.turretY,this.turretWidth, -this.turretHeight/2);
+        ctx.strokeRect(this.turretX,this.turretY,this.turretWidth, -this.turretHeight/2);
         ctx.restore();
         ctx.fillStyle = "black";
     }
