@@ -47,6 +47,7 @@ class Player{
         this.coinMultiplier = 1 * (this.coinMultiplier + 1)
     }
     findAngle(x1, y1, x2, y2){
+        let angle = 0;
         //opposite
         let opp = y2 - y1;
         //adjacent
@@ -54,13 +55,13 @@ class Player{
         //pythagorean
         let hyp = Math.sqrt((opp*opp) + (adj*adj));
         if((opp >= 0) && (adj >= 0)){
-            let angle = Math.asin(opp/hyp);
+            angle = Math.asin(opp/hyp);
         }else if((opp < 0) && (adj >= 0)){
-            let angle = Math.acos(adj/hyp);
+            angle = Math.acos(adj/hyp);
         }else if((opp >= 0) && (adj < 0)){
-            let angle = Math.asin(opp/hyp);
+            angle = Math.asin(opp/hyp);
         }else if((opp < 0) && (adj < 0)){
-            let angle = Math.atan(opp/adj);
+            angle = Math.atan(opp/adj);
         }
         return angle;
     }
