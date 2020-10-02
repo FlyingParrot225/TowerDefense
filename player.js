@@ -46,16 +46,12 @@ class Player{
         this.fireRate = 5 - this.inventory.upgrade.fireRate/10;
         this.coinMultiplier = 1 * (this.coinMultiplier + 1)
     }
-    findAngle(x,y){
-        let length1 = x;
-        let length2 = y;
-        let angle = Math.atan(length2/length1);
+    findAngle(x1, y1, x2, y2){
+        let angle = Math.atan2(x1 - x2, -(y1 - y2));
         return angle;
     }
     rotateTurret(){
-        let length1 = mouse.x - this.centerX;
-        let length2 = mouse.y - this.centerY;
-        this.turretAngle = this.findAngle(length1,length2);
+        this.turretAngle = this.findAngle(mouse.x,mouse.y,this.centerX, this.centerY);
     }
     shoot(){
 
@@ -65,15 +61,13 @@ class Player{
         ctx.strokeStyle = "black";
         ctx.fillRect(this.towerX,this.towerY, this.towerWidth, this.towerHeight);
         ctx.strokeRect(this.towerX,this.towerY, this.towerWidth, this.towerHeight);
+        ctx.save()
         ctx.translate(this.centerX, this.centerY);
-        ctx.rotate(-(this.turretAngle*Math.PI/180));
-        ctx.translate(0, 0);
+        ctx.rotate(this.turretAngle*Math.PI/180);
         ctx.fillStyle = "gray"
         ctx.fillRect(this.turretX,this.turretY,this.turretWidth, this.turretHeight);
         ctx.strokeRect(this.turretX,this.turretY,this.turretWidth, this.turretHeight);
-        ctx.translate(this.centerX, this.centerY);
-        ctx.rotate((this.turretAngle*Math.PI/180));
-        ctx.translate(0, 0);
+        ctx.restore();
         ctx.fillStyle = "black";
     }
     update(){
