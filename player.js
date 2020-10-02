@@ -6,7 +6,7 @@ class Player{
         this.towerY = (canvas.height - this.towerHeight)/2;
         this.centerX = this.towerX + this.towerWidth/2;
         this.centerY = this.towerY + this.towerHeight/2;
-        this.turretWidth = 40;
+        this.turretWidth = 60;
         this.turretHeight = 10;
         this.turretX;
         this.turretY;

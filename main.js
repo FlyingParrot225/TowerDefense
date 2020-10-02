@@ -2,6 +2,8 @@
 
 //variables
 const canvas = document.querySelector("canvas");
+canvas.width = 500;
+canvas.height = 500;
 const ctx = canvas.getContext("2d");
 
 var mouse = {
