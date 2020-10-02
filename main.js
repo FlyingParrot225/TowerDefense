@@ -67,9 +67,9 @@ function transaction(coin,upgrade){
 }
 //loop
 function loop(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
     if(gameState.start){
         if(gameState.battle){
-            ctx.clearRect(0,0,canvas.width,canvas.height);
             player.update();
         }else{
             //test for transaction
