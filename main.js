@@ -6,6 +6,8 @@ canvas.width = 500;
 canvas.height = 500;
 const ctx = canvas.getContext("2d");
 
+var bulletArr = [];
+
 var mouse = {
     x : 0,
     y : 0,
@@ -67,11 +69,22 @@ function transaction(coin,upgrade){
     player.modifyUpgrade(upgrade, 1);
     player.insertUpgrade();    
 }
+function shoot(){
+    if(player.canShoot){
+        //calculate dx and dy using slope
+        let dx = mouse.x - player.centerX;
+        let dy = -(mouse.y - player.centerY);
+        bulletArr.push(new Bullet(player.centerX, player.centerY, dx, dy));
+    }
+}
 //loop
 function loop(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
     if(gameState.start){
         if(gameState.battle){
+            for(let i=0;i<bulletArr.length;i++){
+                bulletArr[i].update();
+            }
             player.update();
         }else{
             //test for transaction

@@ -43,7 +43,7 @@ class Player{
     }
     insertUpgrade(){
         this.hp = 5 + this.inventory.upgrade.hp * 5;
-        this.fireRate = 5 - this.inventory.upgrade.fireRate/10;
+        this.fireRate = 1000 - this.inventory.upgrade.fireRate*10;
         this.coinMultiplier = 1 * (this.coinMultiplier + 1)
     }
     findAngle(x1, y1, x2, y2){
@@ -62,9 +62,6 @@ class Player{
     rotateTurret(){
         this.turretAngle = -this.findAngle(mouse.x,mouse.y,this.centerX, this.centerY);
         console.log(this.findAngle(mouse.x,mouse.y,this.centerX, this.centerY));
-    }
-    shoot(){
-
     }
     draw(){
         ctx.fillStyle = "lightblue";
