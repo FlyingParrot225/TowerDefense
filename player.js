@@ -54,6 +54,9 @@ class Player{
         let adj = x1 - x2;
         //pythagorean
         angle = Math.atan(opp/adj);
+        if(adj < 0){
+            angle += 180*Math.PI/180;
+        }
         return angle;
     }
     rotateTurret(){
