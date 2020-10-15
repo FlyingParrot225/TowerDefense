@@ -71,10 +71,14 @@ function transaction(coin,upgrade){
 }
 function shoot(){
     if(player.canShoot){
+        player.canShoot = false;
         //calculate dx and dy using slope
         let dx = mouse.x - player.centerX;
         let dy = -(mouse.y - player.centerY);
         bulletArr.push(new Bullet(player.centerX, player.centerY, dx, dy));
+        setTimeout(function(){
+            player.canShoot = true;        
+        },player.fireRate);
     }
 }
 //loop

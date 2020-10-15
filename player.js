@@ -14,6 +14,7 @@ class Player{
         this.hp = 5;
         this.fireRate;
         this.rotationSpeed;
+        this.canShoot = true;
         this.inventory = {
             coins : 0,
             upgrade : {
