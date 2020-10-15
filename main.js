@@ -36,7 +36,7 @@ window.addEventListener('keyup',function(e){
 });
 function controls(){
     if(ctrlArr[32]){
-        player.shoot();
+        shoot();
     }
 }
 //physics
