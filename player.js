@@ -47,22 +47,9 @@ class Player{
         this.fireRate = 1000 - this.inventory.upgrade.fireRate*10;
         this.coinMultiplier = 1 * (this.coinMultiplier + 1)
     }
-    findAngle(x1, y1, x2, y2){
-        let angle = 0;
-        //opposite
-        let opp = y2 - y1;
-        //adjacent
-        let adj = x1 - x2;
-        //pythagorean
-        angle = Math.atan(opp/adj);
-        if(adj < 0){
-            angle += 180*Math.PI/180;
-        }
-        return angle;
-    }
     rotateTurret(){
-        this.turretAngle = -this.findAngle(mouse.x,mouse.y,this.centerX, this.centerY);
-        console.log(this.findAngle(mouse.x,mouse.y,this.centerX, this.centerY));
+        this.turretAngle = -findAngle(mouse.x,mouse.y,this.centerX, this.centerY);
+        console.log(findAngle(mouse.x,mouse.y,this.centerX, this.centerY));
     }
     draw(){
         ctx.fillStyle = "lightblue";

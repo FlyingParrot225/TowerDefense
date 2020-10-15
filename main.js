@@ -62,6 +62,20 @@ function collision(obj1, obj2){
     }
 }
 //interaction
+function findAngle(x1, y1, x2, y2){
+    let angle = 0;
+    //opposite
+    let opp = y2 - y1;
+    //adjacent
+    let adj = x1 - x2;
+    //pythagorean
+    angle = Math.atan(opp/adj);
+    if(adj < 0){
+        angle += 180*Math.PI/180;
+    }
+    return angle;
+}
+
 function transaction(coin,upgrade){
     //subtract coin amount from player object
     player.subtractCoin(coin)
