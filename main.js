@@ -80,6 +80,7 @@ function shoot(){
 //loop
 function loop(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
+    controls();
     if(gameState.start){
         if(gameState.battle){
             for(let i=0;i<bulletArr.length;i++){
