@@ -4,22 +4,21 @@ class Bullet{
         this.y = y;
         this.radius = 10;
         this.bulletSpeed = 1;
+        this.dx = dx;
+        this.dy = dy;
     }
     draw(){
-        ctx.save()
-        ctx.translate(this.x, this.y);
-        ctx.rotate(-findAngle(mouse.x,mouse.y,this.x, this.y));
         ctx.beginPath();
         ctx.fillStyle = "yellow";
         ctx.arc(this.x,this.y,this.radius,0,2*Math.PI);
         ctx.fill();
-        ctx.restore();
     }
     behaviour(){
         
     }
     update(){
-        this.x += 5*this.bulletSpeed;
+        this.x += this.bulletSpeed*this.dx;
+        this.y += this.bulletSpeed*this.dy;
         this.draw();
         this.behaviour();
     }
