@@ -87,19 +87,13 @@ function shoot(){
     if(player.canShoot){
         player.canShoot = false;
         let dx = 0;
-        let dy = 0;
         //calculate dx and dy using slope
         if(mouse.x - player.centerX > 0){
             dx = 5;
         }else{
             dx = -5;
         }
-        if(mouse.y - player.centerY > 0){
-            dy = 5;
-        }else{
-            dy = -5;
-        }
-        bulletArr.push(new Bullet(player.centerX, player.centerY, dx, dy));
+        bulletArr.push(new Bullet(player.centerX, player.centerY, dx));
         setTimeout(function(){
             player.canShoot = true;        
         },player.fireRate);
