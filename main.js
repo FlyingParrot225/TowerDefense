@@ -86,10 +86,20 @@ function transaction(coin,upgrade){
 function shoot(){
     if(player.canShoot){
         player.canShoot = false;
+        let dx = 0;
+        let dy = 0;
         //calculate dx and dy using slope
-        let dx = player.centerX - mouse.x;
-        let dy = player.centerY - mouse.y;
-        bulletArr.push(new Bullet(player.centerX, player.centerY, -dx, -dy));
+        if(mouse.x - player.centerX > 0){
+            dx = 5;
+        }else{
+            dx = -5;
+        }
+        if(mouse.y - player.centerY > 0){
+            dy = 5;
+        }else{
+            dy = -5;
+        }
+        bulletArr.push(new Bullet(player.centerX, player.centerY, dx, dy));
         setTimeout(function(){
             player.canShoot = true;        
         },player.fireRate);
