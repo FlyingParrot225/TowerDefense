@@ -5,7 +5,7 @@ class Bullet{
         this.radius = 10;
         this.bulletSpeed = 1;
         this.dx = dx;
-        this.angle = -findAngle(mouse.x,mouse.y,this.x, this.y);
+        this.angle = -findAngle(mouse.x,mouse.y,player.centerX, player.centerY);
     }
     draw(){
         ctx.save()
