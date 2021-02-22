@@ -70,8 +70,12 @@ function findAngle(x1, y1, x2, y2){
     let adj = x1 - x2;
     //pythagorean
     angle = Math.atan(opp/adj);
-    if(adj < 0){
-        angle += 180*Math.PI/180;
+    if(adj < 0 && opp >= 0){
+        angle += 90;
+    }else if(adj < 0 && opp < 0) {
+        angle += 180;
+    }else if(adj >= 0 && opp < 0) {
+        angle += 270;
     }
     return angle;
 }
